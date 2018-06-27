@@ -10,7 +10,9 @@ language_tabs:
 toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
+<!-- these are sections contained in files in the includes folder -->
 includes:
+  - example 
   - errors
 
 search: true
