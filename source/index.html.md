@@ -12,8 +12,7 @@ toc_footers:
 
 includes:
   - cookbook
-  - example 
-  - errors
+  - example
 
 search: true
 ---
