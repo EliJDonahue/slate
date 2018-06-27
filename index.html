@@ -126,6 +126,95 @@
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
 
+          <h1 id="cookbook">Cookbook</h1>
+
+<!-- 7.1 Create an Aras Innovator Object -->
+
+<h2 id="create-an-aras-innovator-object">Create an Aras Innovator Object</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myInnovator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Innovator</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myInnovator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getInnovator</span><span class="p">();</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">Innovator</span> <span class="n">myInnovator</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">getInnovator</span><span class="p">();</span>
+</code></pre><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">myInnovator</span> <span class="ow">As</span> <span class="n">Innovator</span> <span class="o">=</span> <span class="k">Me</span><span class="p">.</span><span class="n">getInnovator</span><span class="p">()</span>
+</code></pre>
+<blockquote>
+<p>Result: A new Innovator object</p>
+</blockquote>
+
+<p>You need an Innovator Object to return a newResult() or newError() Item.</p>
+
+<h3 id="technique">Technique</h3>
+
+<p>There are basically two ways to create a new Innovator object; by getting the Innovator from the Item object or (only in JavaScript) calling the Class constructor.</p>
+
+<!-- 7.2 Create an Item Object -->
+
+<h2 id="create-an-item-object">Create an Item Object</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myItem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Item</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myItem</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">newItem</span><span class="p">(</span><span class="nx">myType</span><span class="p">,</span><span class="nx">myAction</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">myInnovator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getInnovator</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">myItem</span> <span class="o">=</span> <span class="nx">myInnovator</span><span class="p">.</span><span class="nx">newItem</span><span class="p">(</span><span class="nx">myType</span><span class="p">,</span><span class="nx">myAction</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">myResult</span> <span class="o">=</span> <span class="nx">myInnovator</span><span class="p">.</span><span class="nx">newResult</span><span class="p">(</span><span class="nx">resultText</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">myError</span> <span class="o">=</span> <span class="nx">myInnovator</span><span class="p">.</span><span class="nx">newError</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">);</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">Item</span> <span class="n">myItem</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">newItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="n">myAction</span><span class="p">);</span>
+
+<span class="n">Innovator</span> <span class="n">myInnovator</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">getInnovator</span><span class="p">();</span>
+<span class="n">Item</span> <span class="n">myItem</span> <span class="p">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="nf">newItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="n">myAction</span><span class="p">);</span>
+<span class="n">Item</span> <span class="n">myResult</span> <span class="p">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="nf">newResult</span><span class="p">(</span><span class="n">resultText</span><span class="p">);</span>
+<span class="n">Item</span> <span class="n">myError</span> <span class="p">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="nf">newError</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">);</span>
+</code></pre><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">myItem</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="k">Me</span><span class="p">.</span><span class="n">NewItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="n">myAction</span><span class="p">)</span>
+<span class="k">Dim</span> <span class="nv">myInnovator</span> <span class="ow">As</span> <span class="n">Innovator</span> <span class="o">=</span> <span class="k">Me</span><span class="p">.</span><span class="n">getInnovator</span><span class="p">()</span>
+<span class="k">Dim</span> <span class="nv">myItem</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="n">NewItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="n">myAction</span><span class="p">)</span>
+<span class="k">Dim</span> <span class="nv">myResult</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="n">NewResult</span><span class="p">(</span><span class="n">resultText</span><span class="p">)</span>
+<span class="k">Dim</span> <span class="nv">myError</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="n">NewError</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Result: A new Item object</p>
+</blockquote>
+
+<p>You need an Item Object to submit a query or to add an Item.</p>
+
+<h3 id="technique">Technique</h3>
+
+<p>There are basically two ways to create a new Item Object; by calling the factory methods on the Item object or Innovator object or (only in JavaScript) calling the Class constructor.</p>
+
+<!-- 7.3 Query for an Item -->
+
+<h2 id="query-for-an-item">Query for an Item</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// Option 1</span>
+<span class="kd">var</span> <span class="nx">qryItem</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">newItem</span><span class="p">(</span><span class="nx">myType</span><span class="p">,</span><span class="s2">"get"</span><span class="p">);</span>
+<span class="nx">qryItem</span><span class="p">.</span><span class="nx">setID</span><span class="p">(</span><span class="nx">myId</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">qryItem</span><span class="p">.</span><span class="nx">apply</span><span class="p">();</span>
+
+<span class="c1">// Option 2</span>
+<span class="kd">var</span> <span class="nx">myInnovator</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getInnovator</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">myInnovator</span><span class="p">.</span><span class="nx">getItemById</span><span class="p">(</span><span class="nx">myType</span><span class="p">,</span> <span class="nx">myId</span><span class="p">);</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// Option 1</span>
+<span class="n">Item</span> <span class="n">qryItem</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">newItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="s">"get"</span><span class="p">);</span>
+<span class="n">qryItem</span><span class="p">.</span><span class="nf">setID</span><span class="p">(</span><span class="n">myId</span><span class="p">);</span>
+<span class="n">Item</span> <span class="n">results</span> <span class="p">=</span> <span class="n">qryItem</span><span class="p">.</span><span class="nf">apply</span><span class="p">();</span>
+
+<span class="c1">// Option 2</span>
+<span class="n">Innovator</span> <span class="n">myInnovator</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">getInnovator</span><span class="p">();</span>
+<span class="n">Item</span> <span class="n">results</span> <span class="p">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="nf">getItemById</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span> <span class="n">myId</span><span class="p">);</span>
+</code></pre><pre class="highlight vb tab-vb"><code><span class="c1">' Option 1</span>
+<span class="k">Dim</span> <span class="nv">qryItem</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="k">Me</span><span class="p">.</span><span class="n">NewItem</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span><span class="s">"get"</span><span class="p">)</span>
+<span class="n">qryItem</span><span class="p">.</span><span class="n">setID</span><span class="p">(</span><span class="n">myId</span><span class="p">)</span>
+<span class="k">Dim</span> <span class="nv">results</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="n">qryItem</span><span class="p">.</span><span class="n">Apply</span><span class="p">()</span>
+
+<span class="c1">' Option 2</span>
+<span class="k">Dim</span> <span class="nv">myInnovator</span> <span class="ow">As</span> <span class="n">Innovator</span> <span class="o">=</span> <span class="k">Me</span><span class="p">.</span><span class="n">getInnovator</span><span class="p">()</span>
+<span class="k">Dim</span> <span class="nv">results</span> <span class="ow">As</span> <span class="n">Item</span> <span class="o">=</span> <span class="n">myInnovator</span><span class="p">.</span><span class="n">GetItemById</span><span class="p">(</span><span class="n">myType</span><span class="p">,</span> <span class="n">myId</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Result: The queried Item object</p>
+</blockquote>
+
+<p>You want to query for an Item that you know by id and type.</p>
+
+<h3 id="technique">Technique</h3>
+
+<p>There are a few ways to get an Item when you know its id and type, the simplest being the Innovator.getItemById() method. However, if you need to be granular about your request then building the query using the IOM is required. This provides the ability to include controls to limit the results and define the structure to be returned for the Items found.</p>
+
           <h1 id="section-title">Section Title</h1>
 
 <h2 id="subsection-title">Subsection Title</h2>
